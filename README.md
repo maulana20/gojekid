@@ -3,7 +3,7 @@ Repository berikut ini merupakan porting dari Gojek untuk PHP
 
 | Method  | Result  |
 |---|---|
-| `loginPhone`  | In Progress |
+| `loginPhone`  | Ok |
 | `loginGojek`  | In Progress |
 | `checkBalance`  | In Progress |
 | `checkWalletCode`  | In Progress |

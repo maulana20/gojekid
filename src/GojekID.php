@@ -79,7 +79,7 @@ class GojekID
 			'client_secret'		=> '83415d06-ec4e-11e6-a41b-6c40088ab51e'
 		];
 		
-		return $ch->post(BASE_ENDPOINT . Action::loginGojek, $data, $this->headers)->getResponse();
+		return $ch->post(GojekID::BASE_ENDPOINT . Action::loginGojek, $data, $this->headers)->getResponse();
 	}
 	
 	/**
@@ -96,7 +96,7 @@ class GojekID
 		
 		$data = [];
 		
-		return $ch->get(BASE_ENDPOINT . Action::checkBalance, $data, $this->headers)->getResponse();
+		return $ch->get(GojekID::BASE_ENDPOINT . Action::checkBalance, $data, $this->headers)->getResponse();
 	}
 	
 	/**
@@ -114,7 +114,7 @@ class GojekID
 		
 		$data = [];
 		
-		return $ch->get(BASE_ENDPOINT . 'wallet/qr-code?phone_number=' . $mobilePhoneTo, $data, $this->headers)->getResponse();
+		return $ch->get(GojekID::BASE_ENDPOINT . 'wallet/qr-code?phone_number=' . $mobilePhoneTo, $data, $this->headers)->getResponse();
 	}
 	
 	/**
@@ -141,6 +141,6 @@ class GojekID
 			'description'		=> $description
 		];
 		
-		return $ch->post(BASE_ENDPOINT . Action::transferGopay, $data, $this->headers)->getResponse();
+		return $ch->post(GojekID::BASE_ENDPOINT . Action::transferGopay, $data, $this->headers)->getResponse();
 	}
 }
