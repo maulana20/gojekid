@@ -1,0 +1,24 @@
+{
+    "name": "maulana20/gojekid",
+    "description": "Un-Official Gojek API Wrapper",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maulana Saputra",
+            "email": "maulanasaputra11091082@gmail.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+          "src/helper/function.php"
+        ],
+        "psr-4" : {
+          "Maulana20\\": "src"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^7"
+    }
+}
