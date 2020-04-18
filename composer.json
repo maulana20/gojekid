@@ -17,7 +17,9 @@
           "Maulana20\\": "src"
         }
     },
-    "require": {},
+    "require": {
+        "php": "^7.0"
+    },
     "require-dev": {
         "phpunit/phpunit": "^7"
     }
