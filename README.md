@@ -4,18 +4,22 @@ Repository berikut ini merupakan porting dari Gojek untuk PHP
 | Method  | Result  |
 |---|---|
 | `loginPhone`  | Ok |
-| `loginGojek`  | In Progress |
+| `loginGojek`  | Ok |
 | `checkBalance`  | In Progress |
 | `checkWalletCode`  | In Progress |
 | `transferGopay`  | In Progress |
 
 ### Dokumentasi
 #### Menjalankan GojekID
-##### Mengambil Library Sesuai Kebutuhan
+##### Ambil Paket Pada Composer
 ```php
-composer install
+composer require maulana20/gojekid
 ```
-##### Jalankan
+##### Jika Di Jalankan Dengan Laravel Tinker
+
+[![tinker](./screen/tinker.PNG)](./../../)
+
+##### Jika Di Jalankan Dengan Native
 ```php
 require 'vendor/autoload.php';
 use Maulana20\GojekID;

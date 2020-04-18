@@ -11,14 +11,14 @@ class LoginGojekResponse
 	public function __construct($res)
 	{
 		$this->authToken = $res->data->access_token;
-		$this->fullName = $res>data->name;
-		$this->email = $res>data->email_address;
-		$this->phoneNumber = $res>data->phone_number;
+		$this->fullName = $res->data->name;
+		$this->email = $res->data->email_address;
+		$this->phoneNumber = $res->data->phone_number;
 	}
 	
-	public function getLoginToken()
+	public function getAuthToken()
 	{
-		return $this->loginToken;
+		return $this->authToken;
 	}
 	
 	public function getFullName()
