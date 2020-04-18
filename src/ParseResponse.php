@@ -18,7 +18,9 @@ class ParseResponse
 	{
 		$res_json = json_decode($res);
 		
-		if (!$res_json->success) throw new ParseException($res_json->errors[0]->code . ' => ' . $res_json->errors[0]->message);
+		if (isset($res_json->success)) {
+			if ($res_json->success == false) throw new ParseException($res_json->errors[0]->code . ' => ' . $res_json->errors[0]->message);
+		}
 		
 		$parts = parse_url($url);
 		

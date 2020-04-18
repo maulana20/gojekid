@@ -53,7 +53,7 @@ echo $gojek->checkWalletCode('<mobilePhoneTo>')->getQrId();
 #### Kirim Saldo
 ```php
 $gojek->setToken = '<authToken>';
-echo $gojek->transferGopay('<QrId>', '<PIN>', '<amount>', '<description>');
+$result = $gojek->transferGopay('<QrId>', '<PIN>', '<amount>', '<description>');
 ```
 
 ### Author
