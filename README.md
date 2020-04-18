@@ -5,7 +5,7 @@ Repository berikut ini merupakan porting dari Gojek untuk PHP
 |---|---|
 | `loginPhone`  | Ok |
 | `loginGojek`  | Ok |
-| `checkBalance`  | In Progress |
+| `checkBalance`  | Ok |
 | `checkWalletCode`  | In Progress |
 | `transferGopay`  | In Progress |
 
