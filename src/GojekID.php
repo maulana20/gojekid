@@ -15,7 +15,7 @@ class GojekID
 	 * @var String
 	 */
 	
-	private $authToken;
+	public $authToken;
 	
 	private $headers = [
 		'X-AppVersion'	=> Meta::APP_VERSION,
