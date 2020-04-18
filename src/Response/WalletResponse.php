@@ -1,7 +1,7 @@
 <?php
 namespace Maulana20\Response;
 
-class BalanceResponse
+class WalletResponse
 {
 	private $qrId;
 	
