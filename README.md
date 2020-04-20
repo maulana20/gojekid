@@ -10,6 +10,7 @@ Repository Berikut Ini Merupakan Porting Dari [GOJEK](https://github.com/ridwanf
 - [ ] Melakukan Verifikasi Perubahan Pada Akun
 - [x] Menampilkan Jumlah Saldo
 - [ ] Logout
+
 <b>Fitur Akun Pengguna GOPAY</b>
 - [x] Menampilkan Detail Data Informasi
 - [x] Menampilkan History Transaksi
@@ -17,7 +18,8 @@ Repository Berikut Ini Merupakan Porting Dari [GOJEK](https://github.com/ridwanf
 - [x] Transfer Ke Sesama GOPAY
 
 ### Dokumentasi
-#### Menjalankan GojekID
+
+#### Langkah Untuk Menjalankan GojekID
 ##### Ambil Paket Pada Composer
 ```php
 composer require maulana20/gojekid
@@ -34,48 +36,63 @@ use Maulana20\GojekID;
 $gojek = new GojekID();
 ```
 
-#### Login GOJEK
-##### Langkah Pertama
+#### Fitur Akun Pengguna GOJEK
+##### Login Dengan Nomor Handphone
 ```php
 $loginToken = $gojek->loginPhone('<mobilePhone>')->getLoginToken();
 ```
-##### Langkah Kedua
+##### Login Dengan Email <span style="color:red">(In Progress)</span>
+```php
+$loginToken = $gojek->loginEmail('<Email>')->getLoginToken();
+```
+##### Login Pada GOJEK
 ```php
 $authToken = $gojek->loginGojek('<loginToken>', '<OTP>')->getAuthToken();
 ```
-
-#### Mendapatkan Balance
+##### Menampilkan Informasi Akun Pengguna <span style="color:red">(In Progress)</span>
+```php
+$gojek->authToken = '<authToken>';
+$result = $gojek->getCustomer()->getResult();
+```
+##### Melakukan Perubahan Pada Akun <span style="color:red">(In Progress)</span>
+```php
+$gojek->authToken = '<authToken>';
+$result = $gojek->editAccount('<mobilePhone>', '<email>', '<name>')->getResult();
+```
+##### Melakukan Verifikasi Perubahan Pada Akun <span style="color:red">(In Progress)</span>
+```php
+$gojek->authToken = '<authToken>';
+$result = $gojek->editAccountVerify('<id>', '<mobilePhone>', '<verificationCode>')->getResult();
+```
+##### Menampilkan Jumlah Saldo
 ```php
 $gojek->authToken = '<authToken>';
 $balance = $gojek->checkBalance()->getBalance();
 ```
 
-#### Mendapatkan GOPAY Detail
+#### Fitur Akun Pengguna GOPAY
+##### Menampilkan Detail Data Informasi
 ```php
 $gojek->authToken = '<authToken>';
 $result = $gojek->gopayDetail()->getResult();
 ```
-
-#### Mendapatkan GOPAY History
+##### Menampilkan History Transaksi
 ```php
 $gojek->authToken = '<authToken>';
 $result = $gojek->gopayHistory('<page>', '<limit>')->getResult();
 ```
-
-#### Transfer GOPAY
-##### Mendapatkan Check Wallet Code
+##### Mengambil Data Wallet Code
 ```php
 $gojek->authToken = '<authToken>';
 $QrId = $gojek->checkWalletCode('<mobilePhoneTo>')->getQrId();
 ```
-
-##### Kirim Saldo
+##### Transfer Ke Sesama GOPAY
 ```php
 $gojek->authToken = '<authToken>';
 $ref = $gojek->gopayTransfer('<QrId>', '<PIN>', '<amount>', '<description>')->getRef();
 ```
 
-### PHP Unit Test
+### Melakukan Testing Pada PHP Unit Tests
 
 [![php-test](./screen/php-test.PNG)](./../../)
 
