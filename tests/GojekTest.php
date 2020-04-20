@@ -48,7 +48,8 @@ class GojekTest extends TestCase
 		$this->assertNotEquals('https://api.gojekapi.com', GojekID::BASE_ENDPOINT);
 		$this->assertSame('https://api.gojekapi.com/v3/customers/token', GojekID::BASE_ENDPOINT . Action::loginGojek);
 		$this->assertSame('https://api.gojekapi.com/wallet/profile', GojekID::BASE_ENDPOINT . Action::checkBalance);
-		$this->assertSame('https://api.gojekapi.com/v2/fund/transfer', GojekID::BASE_ENDPOINT . Action::transferGopay);
+		$this->assertSame('https://api.gojekapi.com/v2/fund/transfer', GojekID::BASE_ENDPOINT . Action::gopayTransfer);
+		$this->assertSame('https://api.gojekapi.com/wallet/profile/detailed', GojekID::BASE_ENDPOINT . Action::gopayDetail);
 	}
 	
 	public function testLoginPhoneResponse()

@@ -106,6 +106,24 @@ class GojekID
 	 * @return \Maulana20\Response\WalletResponse
 	 */
 	
+	public function gopayDetail()
+	{
+		$ch = new Curl();
+		
+		$this->headers['Authorization'] = 'Bearer ' . $this->authToken;
+		
+		$data = [];
+		
+		return $ch->get(GojekID::BASE_ENDPOINT . Action::gopayDetail, $data, $this->headers)->getResponse();
+	}
+	
+	/**
+	 * Get Wallet Code
+	 * 
+	 * @param String			$mobilePhoneTo
+	 * @return \Maulana20\Response\WalletResponse
+	 */
+	
 	public function checkWalletCode($mobilePhoneTo)
 	{
 		$ch = new Curl();
@@ -127,7 +145,7 @@ class GojekID
 	 * @return \Maulana20\Response\WalletResponse
 	 */
 	
-	public function transferGopay($QRID, $PIN, $amount, $description)
+	public function gopayTransfer($QRID, $PIN, $amount, $description)
 	{
 		$ch = new Curl();
 		
@@ -141,6 +159,6 @@ class GojekID
 			'description'		=> $description
 		];
 		
-		return $ch->post(GojekID::BASE_ENDPOINT . Action::transferGopay, $data, $this->headers)->getResponse();
+		return $ch->post(GojekID::BASE_ENDPOINT . Action::gopayTransfer, $data, $this->headers)->getResponse();
 	}
 }
