@@ -119,7 +119,7 @@ class GojekID
 	/**
 	 * Get GOPAY History
 	 * 
-	 * @return \Maulana20\Response\DetailResponse
+	 * @return \Maulana20\Response\HistoryResponse
 	 */
 	
 	public function gopayHistory($page, $limit)
@@ -148,7 +148,7 @@ class GojekID
 		
 		$data = [];
 		
-		return $ch->get(GojekID::BASE_ENDPOINT . 'wallet/qr-code?phone_number=' . $mobilePhoneTo, $data, $this->headers)->getResponse();
+		return $ch->get(GojekID::BASE_ENDPOINT . 'wallet/qr-code?phone_number=%2B62' . ltrim($mobilePhoneTo, '0'), $data, $this->headers)->getResponse();
 	}
 	
 	/**

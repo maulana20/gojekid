@@ -3,15 +3,15 @@ namespace Maulana20\Response;
 
 class TransferResponse
 {
-	private $result;
+	private $ref;
 	
 	public function __construct($res)
 	{
-		$this->result = $res->data;
+		$this->ref = $res->data->transaction_ref;
 	}
 	
-	public function getResult()
+	public function getRef()
 	{
-		return $this->result;
+		return $this->ref;
 	}
 }
