@@ -100,10 +100,9 @@ class GojekID
 	}
 	
 	/**
-	 * Get Wallet Code
+	 * Get GOPAY Detail
 	 * 
-	 * @param String			$mobilePhoneTo
-	 * @return \Maulana20\Response\WalletResponse
+	 * @return \Maulana20\Response\DetailResponse
 	 */
 	
 	public function gopayDetail()
@@ -115,6 +114,23 @@ class GojekID
 		$data = [];
 		
 		return $ch->get(GojekID::BASE_ENDPOINT . Action::gopayDetail, $data, $this->headers)->getResponse();
+	}
+	
+	/**
+	 * Get GOPAY History
+	 * 
+	 * @return \Maulana20\Response\DetailResponse
+	 */
+	
+	public function gopayHistory($page, $limit)
+	{
+		$ch = new Curl();
+		
+		$this->headers['Authorization'] = 'Bearer ' . $this->authToken;
+		
+		$data = [];
+		
+		return $ch->get(GojekID::BASE_ENDPOINT . 'wallet/history?page=' . $page . '&limit=' . $limit, $data, $this->headers)->getResponse();
 	}
 	
 	/**

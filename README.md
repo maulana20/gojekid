@@ -7,6 +7,7 @@ Repository berikut ini merupakan porting dari Gojek untuk PHP
 | `loginGojek`  | Ok |
 | `checkBalance`  | Ok |
 | `gopayDetail`  | Ok |
+| `gopayHistory`  | Ok |
 | `checkWalletCode`  | In Progress |
 | `gopayTransfer`  | In Progress |
 
@@ -48,6 +49,12 @@ $balance = $gojek->checkBalance()->getBalance();
 ```php
 $gojek->authToken = '<authToken>';
 $result = $gojek->gopayDetail()->getResult();
+```
+
+#### Mendapatkan GOPAY History
+```php
+$gojek->authToken = '<authToken>';
+$result = $gojek->gopayHistory()->getResult();
 ```
 
 #### Transfer GOPAY

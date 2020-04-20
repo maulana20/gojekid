@@ -12,7 +12,7 @@ class ParseResponse
 		GojekID::BASE_ENDPOINT . Action::loginGojek				=> 'Maulana20\Response\LoginGojekResponse',
 		GojekID::BASE_ENDPOINT . Action::checkBalance			=> 'Maulana20\Response\BalanceResponse',
 		GojekID::BASE_ENDPOINT . Action::gopayTransfer			=> 'Maulana20\Response\TransferResponse',
-		GojekID::BASE_ENDPOINT . Action::gopayDetail			=> 'Maulana20\Response\DetailResponse',
+		GojekID::BASE_ENDPOINT . Action::gopayDetail			=> 'Maulana20\Response\DetailResponse'
 	];
 	
 	public function __construct($res, $url)
@@ -27,6 +27,8 @@ class ParseResponse
 		
 		if ($parts['path'] == '/wallet/qr-code') {
 			$this->response = new \Maulana20\Response\WalletResponse($res_json);
+		} else if ($parts['path'] == '/wallet/history') {
+			$this->response = new \Maulana20\Response\HistoryResponse($res_json);
 		} else {
 			$this->response = new $this->storeClass[$url]($res_json);
 		}
