@@ -30,31 +30,35 @@ $gojek = new GojekID();
 #### Login GOJEK
 ##### Langkah Pertama
 ```php
-echo $gojek->loginPhone('<mobilePhone>')->getLoginToken();
+$loginToken = $gojek->loginPhone('<mobilePhone>')->getLoginToken();
 ```
 ##### Langkah Kedua
 ```php
-echo $gojek->loginGojek('<loginToken>', '<OTP>')->getAuthToken();
+$authToken = $gojek->loginGojek('<loginToken>', '<OTP>')->getAuthToken();
 ```
 
-### Mendapatkan Balance
+#### Mendapatkan Balance
 ```php
-$gojek->setToken = '<authToken>';
-echo $gojek->checkBalance()->getBalance();
+$gojek->authToken = '<authToken>';
+$balance = $gojek->checkBalance()->getBalance();
 ```
 
-### Transfer GOPAY
-#### Mendapatkan Check Wallet Code
+#### Transfer GOPAY
+##### Mendapatkan Check Wallet Code
 ```php
-$gojek->setToken = '<authToken>';
-echo $gojek->checkWalletCode('<mobilePhoneTo>')->getQrId();
+$gojek->authToken = '<authToken>';
+$QrId = $gojek->checkWalletCode('<mobilePhoneTo>')->getQrId();
 ```
 
-#### Kirim Saldo
+##### Kirim Saldo
 ```php
-$gojek->setToken = '<authToken>';
+$gojek->authToken = '<authToken>';
 $result = $gojek->transferGopay('<QrId>', '<PIN>', '<amount>', '<description>');
 ```
+
+### PHP Unit Test
+
+[![php-test](./screen/php-test.PNG)](./../../)
 
 ### Author
 
