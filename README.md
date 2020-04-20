@@ -1,7 +1,7 @@
 ## <center>Un-Official Gojek API Wrapper</center>
 Repository Berikut Ini Merupakan Porting Dari [GOJEK](https://github.com/ridwanfathin/gojek) Untuk PHP
 
-Fitur Akun Pengguna GOJEK
+<b>Fitur Akun Pengguna GOJEK</b>
 - [x] Login Dengan Nomor Handphone Untuk Mendapatkan `loginToken`
 - [ ] Login Dengan Email Untuk Mendapatkan `loginToken`
 - [x] Login Dengan OTP Untuk Mendapatkan `authToken`
@@ -10,8 +10,7 @@ Fitur Akun Pengguna GOJEK
 - [ ] Melakukan Verifikasi Perubahan Pada Akun
 - [x] Menampilkan Jumlah Saldo
 - [ ] Logout
-
-Fitur Akun Pengguna GOPAY
+<b>Fitur Akun Pengguna GOPAY</b>
 - [x] Menampilkan Detail Data Informasi
 - [x] Menampilkan History Transaksi
 - [x] Mengambil Data Wallet Code `QrId` Untuk Method Transfer
