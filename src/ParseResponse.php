@@ -22,7 +22,9 @@ class ParseResponse
 	{
 		$res_json = json_decode($res);
 		
-		if (isset($res_json->message) && $res_json->message != 'OK') throw new ParseException($url . ' ' . $res_json->message);
+		// NOTE : ACTION => gojek/v2
+		if (isset($res_json->status) && $res_json->status != 'OK') throw new ParseException($url . ' ' . $res_json->message);
+		// NOTE : ACTION => default
 		if (isset($res_json->success) && $res_json->success == false) throw new ParseException($url . ' ' . $res_json->errors[0]->code . ' => ' . $res_json->errors[0]->message);
 		
 		$parts = parse_url($url);

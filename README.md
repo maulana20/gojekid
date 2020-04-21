@@ -57,12 +57,12 @@ $result = $gojek->getCustomer()->getResult();
 ##### Melakukan Perubahan Pada Akun <span style="color:red">(In Progress)</span>
 ```php
 $gojek->setAuthToken('<authToken>');
-$result = $gojek->editAccount('<mobilePhone>', '<email>', '<name>')->getResult();
+$result = $gojek->editAccount('<mobilePhone>', '<email>', '<name>')->getResultV2();
 ```
 ##### Melakukan Verifikasi Perubahan Pada Akun <span style="color:red">(In Progress)</span>
 ```php
 $gojek->setAuthToken('<authToken>');
-$result = $gojek->editAccountVerify('<id>', '<mobilePhone>', '<verificationCode>')->getResult();
+$result = $gojek->editAccountVerify('<id>', '<mobilePhone>', '<verificationCode>')->getResultV2();
 ```
 ##### Menampilkan Jumlah Saldo
 ```php
