@@ -45,10 +45,15 @@ class GojekTest extends TestCase
 	
 	public function testEndPointUrlValue()
 	{
+		// Akun Pengguna GOJEK
 		$this->assertSame('https://api.gojekapi.com/v3/customers/login_with_phone', GojekID::BASE_ENDPOINT . Action::loginPhone);
 		$this->assertNotEquals('https://api.gojekapi.com', GojekID::BASE_ENDPOINT);
 		$this->assertSame('https://api.gojekapi.com/v3/customers/token', GojekID::BASE_ENDPOINT . Action::loginGojek);
+		$this->assertSame('https://api.gojekapi.com/gojek/v2/customer', GojekID::BASE_ENDPOINT . Action::getCustomer);
+		$this->assertSame('https://api.gojekapi.com/gojek/v2/customer/edit/v2', GojekID::BASE_ENDPOINT . Action::editAccount);
 		$this->assertSame('https://api.gojekapi.com/wallet/profile', GojekID::BASE_ENDPOINT . Action::checkBalance);
+		$this->assertSame('https://api.gojekapi.com/v3/auth/token', GojekID::BASE_ENDPOINT . Action::logout);
+		// Akun Pengguna GOPAY
 		$this->assertSame('https://api.gojekapi.com/v2/fund/transfer', GojekID::BASE_ENDPOINT . Action::gopayTransfer);
 		$this->assertSame('https://api.gojekapi.com/wallet/profile/detailed', GojekID::BASE_ENDPOINT . Action::gopayDetail);
 	}

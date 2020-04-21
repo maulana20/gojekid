@@ -59,7 +59,7 @@ class GojekID
 	}
 	
 	/**
-	 * loginGojek
+	 * Login GOJEK
 	 * 
 	 * @param String			$loginToken
 	 * @param String			$OTP
@@ -83,7 +83,7 @@ class GojekID
 	}
 	
 	/**
-	 * Get Balance Gojek
+	 * Get Balance GOJEK
 	 * 
 	 * @return \Maulana20\Response\BalanceResponse
 	 */
@@ -97,6 +97,82 @@ class GojekID
 		$data = [];
 		
 		return $ch->get(GojekID::BASE_ENDPOINT . Action::checkBalance, $data, $this->headers)->getResponse();
+	}
+	
+	/**
+	 * Get Customer GOJEK
+	 * 
+	 * @return \Maulana20\Response\DefaultResponse
+	 */
+	
+	public function getCustomer()
+	{
+		$ch = new Curl();
+		
+		$this->headers['Authorization'] = 'Bearer ' . $this->authToken;
+		
+		$data = [];
+		
+		return $ch->get(GojekID::BASE_ENDPOINT . Action::getCustomer, $data, $this->headers)->getResponse();
+	}
+	
+	/**
+	 * Edit Akun Pengguna GOJEK
+	 * 
+	 * @return \Maulana20\Response\DefaultResponse
+	 */
+	
+	public function editAccount($mobilePhone, $email, $name)
+	{
+		$ch = new Curl();
+		
+		$this->headers['Authorization'] = 'Bearer ' . $this->authToken;
+		
+		$data = [
+			'phone'				=> $mobilePhone,
+			'email'				=> $email,
+			'name'				=> $name,
+		];
+		
+		return $ch->post(GojekID::BASE_ENDPOINT . Action::editAccount, $data, $this->headers)->getResponse();
+	}
+	
+	/**
+	 * Verifikasi Akun Pengguna GOJEK
+	 * 
+	 * @return \Maulana20\Response\DefaultResponse
+	 */
+	
+	public function editAccountVerify($id, $mobilePhone, $verificationCode)
+	{
+		$ch = new Curl();
+		
+		$this->headers['Authorization'] = 'Bearer ' . $this->authToken;
+		
+		$data = [
+			'id'				=> $id,
+			'phone'				=> $mobilePhone,
+			'verificationCode'	=> $verificationCode,
+		];
+		
+		return $ch->post(GojekID::BASE_ENDPOINT . Action::editAccount, $data, $this->headers)->getResponse();
+	}
+	
+	/**
+	 * Logout GOJEK
+	 * 
+	 * @return \Maulana20\Response\DefaultResponse
+	 */
+	
+	public function logout()
+	{
+		$ch = new Curl();
+		
+		$this->headers['Authorization'] = 'Bearer ' . $this->authToken;
+		
+		$data = [];
+		
+		return $ch->delete(GojekID::BASE_ENDPOINT . Action::logout, $data, $this->headers)->getResponse();
 	}
 	
 	/**

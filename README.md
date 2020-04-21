@@ -5,11 +5,11 @@ Repository Berikut Ini Merupakan Porting Dari [GOJEK](https://github.com/ridwanf
 - [x] Login Dengan Nomor Handphone Untuk Mendapatkan `loginToken`
 - [ ] Login Dengan Email Untuk Mendapatkan `loginToken`
 - [x] Login Dengan OTP Untuk Mendapatkan `authToken`
-- [ ] Menampilkan Informasi Akun Pengguna
-- [ ] Melakukan Perubahan Pada Akun
+- [x] Menampilkan Informasi Akun Pengguna
+- [x] Melakukan Perubahan Pada Akun
 - [ ] Melakukan Verifikasi Perubahan Pada Akun
 - [x] Menampilkan Jumlah Saldo
-- [ ] Logout
+- [x] Logout
 
 <b>Fitur Akun Pengguna GOPAY</b>
 - [x] Menampilkan Detail Data Informasi
@@ -68,6 +68,11 @@ $result = $gojek->editAccountVerify('<id>', '<mobilePhone>', '<verificationCode>
 ```php
 $gojek->setAuthToken('<authToken>');
 $balance = $gojek->checkBalance()->getBalance();
+```
+##### Logout
+```php
+$gojek->setAuthToken('<authToken>');
+$gojek->logout();
 ```
 
 #### Fitur Akun Pengguna GOPAY
