@@ -17,6 +17,32 @@ Repository Berikut Ini Merupakan Porting Dari [GOJEK](https://github.com/ridwanf
 - [x] Mengambil Data Wallet Code `QrId` Untuk Method Transfer
 - [x] Transfer Ke Sesama GOPAY
 
+<b>Fitur Data Booking GOJEK</b>
+- [ ] Menampilkan Booking History
+- [ ] Menampilkan Booking Yang Masih Aktif
+- [ ] Mengambil Data Booking Berdasarkan `orderNo`
+- [ ] Mengkalkulasi Pemakaian GOPAY Pada GOJEK
+
+<b>Fitur Data GOFOOD</b>
+- [ ] Menampilkan Data GOFOOD Bedasarkan Lokasi `latLong`
+- [ ] Menampilkan Data GOFOOD Bedasarkan Lokasi `latLong` Dan `limit`
+- [ ] Menampilkan Data Restaurant Bedasarkan `restaurantId`
+- [ ] Menampilkan Data Restaurant Bedasarkan `category`
+
+<b>Fitur Data GOPOINTS</b>
+- [ ] Menampilkan Jumlah Point
+- [ ] Menampilkan Point Lanjutan
+- [ ] Menebus Point
+
+<b>Fitur Data Area GORIDE GOCAR GOSEND</b>
+- [ ] Menampilkan Data Area Semua Driver Terdekat Berdasarkan Lokasi `latLong`
+- [ ] Menampilkan Data Area Driver Terdekat GORIDE Berdasarkan Lokasi `latLong`
+- [ ] Menampilkan Data Area Driver Terdekat GOCAR Berdasarkan Lokasi `latLong`
+- [ ] Menampilkan Data Area Driver Terdekat GOSEND Berdasarkan Lokasi `latLong`
+
+<b>Fitur Data Area GOMART</b>
+- [ ] Menampilkan Data Area Terdekat Berdasarkan Lokasi `latLong`
+
 ### Dokumentasi
 
 #### Langkah Untuk Menjalankan GojekID
