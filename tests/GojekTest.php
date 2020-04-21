@@ -11,6 +11,7 @@ use Maulana20\Response\LoginGojekResponse;
 use Maulana20\Response\BalanceResponse;
 use Maulana20\Response\WalletResponse;
 use Maulana20\Response\TransferResponse;
+use Maulana20\Response\CustomerResponse;
 
 class GojekTest extends TestCase
 {
@@ -116,5 +117,17 @@ JSON;
 		
 		$ref = (new TransferResponse(json_decode($data)))->getRef();
 		$this->assertEquals("02137d45-31e4-4d70-b0a0-40ec73f451e4", $ref);
+	}
+	
+	public function testCustomerResponse()
+	{
+		$data = <<<JSON
+		{
+			"customer": { "name": "maulana20" }
+		}
+JSON;
+		
+		$result = (new CustomerResponse(json_decode($data)))->getResult();
+		$this->assertEquals("maulana20", $result->name);
 	}
 }

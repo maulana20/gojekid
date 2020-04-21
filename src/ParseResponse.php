@@ -8,9 +8,12 @@ class ParseResponse
 	private $response;
 	
 	public $storeClass = [
+		// Akun Pengguna GOJEK
 		GojekID::BASE_ENDPOINT . Action::loginPhone				=> 'Maulana20\Response\LoginPhoneResponse',
 		GojekID::BASE_ENDPOINT . Action::loginGojek				=> 'Maulana20\Response\LoginGojekResponse',
 		GojekID::BASE_ENDPOINT . Action::checkBalance			=> 'Maulana20\Response\BalanceResponse',
+		GojekID::BASE_ENDPOINT . Action::getCustomer			=> 'Maulana20\Response\CustomerResponse',
+		// Akun Pengguna GOPAY
 		GojekID::BASE_ENDPOINT . Action::gopayTransfer			=> 'Maulana20\Response\TransferResponse',
 	];
 	
