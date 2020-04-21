@@ -51,44 +51,44 @@ $authToken = $gojek->loginGojek('<loginToken>', '<OTP>')->getAuthToken();
 ```
 ##### Menampilkan Informasi Akun Pengguna <span style="color:red">(In Progress)</span>
 ```php
-$gojek->authToken = '<authToken>';
+$gojek->setAuthToken('<authToken>');
 $result = $gojek->getCustomer()->getResult();
 ```
 ##### Melakukan Perubahan Pada Akun <span style="color:red">(In Progress)</span>
 ```php
-$gojek->authToken = '<authToken>';
+$gojek->setAuthToken('<authToken>');
 $result = $gojek->editAccount('<mobilePhone>', '<email>', '<name>')->getResult();
 ```
 ##### Melakukan Verifikasi Perubahan Pada Akun <span style="color:red">(In Progress)</span>
 ```php
-$gojek->authToken = '<authToken>';
+$gojek->setAuthToken('<authToken>');
 $result = $gojek->editAccountVerify('<id>', '<mobilePhone>', '<verificationCode>')->getResult();
 ```
 ##### Menampilkan Jumlah Saldo
 ```php
-$gojek->authToken = '<authToken>';
+$gojek->setAuthToken('<authToken>');
 $balance = $gojek->checkBalance()->getBalance();
 ```
 
 #### Fitur Akun Pengguna GOPAY
 ##### Menampilkan Detail Data Informasi
 ```php
-$gojek->authToken = '<authToken>';
+$gojek->setAuthToken('<authToken>');
 $result = $gojek->gopayDetail()->getResult();
 ```
 ##### Menampilkan History Transaksi
 ```php
-$gojek->authToken = '<authToken>';
+$gojek->setAuthToken('<authToken>');
 $result = $gojek->gopayHistory('<page>', '<limit>')->getResult();
 ```
 ##### Mengambil Data Wallet Code
 ```php
-$gojek->authToken = '<authToken>';
+$gojek->setAuthToken('<authToken>');
 $QrId = $gojek->checkWalletCode('<mobilePhoneTo>')->getQrId();
 ```
 ##### Transfer Ke Sesama GOPAY
 ```php
-$gojek->authToken = '<authToken>';
+$gojek->setAuthToken('<authToken>');
 $ref = $gojek->gopayTransfer('<QrId>', '<PIN>', '<amount>', '<description>')->getRef();
 ```
 

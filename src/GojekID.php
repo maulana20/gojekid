@@ -15,7 +15,7 @@ class GojekID
 	 * @var String
 	 */
 	
-	public $authToken;
+	private $authToken;
 	
 	private $headers = [
 		'X-AppVersion'	=> Meta::APP_VERSION,
@@ -35,7 +35,7 @@ class GojekID
 	 * @var String
 	 */
 	
-	public function setToken($authToken)
+	public function setAuthToken($authToken)
 	{
 		$this->authToken = $authToken;
 	}
@@ -102,7 +102,7 @@ class GojekID
 	/**
 	 * Get GOPAY Detail
 	 * 
-	 * @return \Maulana20\Response\DetailResponse
+	 * @return \Maulana20\Response\DefaultResponse
 	 */
 	
 	public function gopayDetail()
@@ -119,7 +119,7 @@ class GojekID
 	/**
 	 * Get GOPAY History
 	 * 
-	 * @return \Maulana20\Response\HistoryResponse
+	 * @return \Maulana20\Response\DefaultResponse
 	 */
 	
 	public function gopayHistory($page, $limit)

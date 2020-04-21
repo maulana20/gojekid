@@ -1,7 +1,7 @@
 <?php
 namespace Maulana20\Response;
 
-class HistoryResponse
+class DefaultResponse
 {
 	private $result;
 	

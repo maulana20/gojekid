@@ -10,6 +10,7 @@ use Maulana20\Response\LoginPhoneResponse;
 use Maulana20\Response\LoginGojekResponse;
 use Maulana20\Response\BalanceResponse;
 use Maulana20\Response\WalletResponse;
+use Maulana20\Response\TransferResponse;
 
 class GojekTest extends TestCase
 {
@@ -56,24 +57,24 @@ class GojekTest extends TestCase
 	{
 		$data = <<<JSON
 		{
-			"data": { "login_token": "123" }
+			"data": { "login_token": "e16e7cf0-7621-419d-9f67-36aa8b919f34" }
 		}
 JSON;
 		
 		$loginToken = (new LoginPhoneResponse(json_decode($data)))->getLoginToken();
-		$this->assertEquals("123", $loginToken);
+		$this->assertEquals("e16e7cf0-7621-419d-9f67-36aa8b919f34", $loginToken);
 	}
 	
 	public function testLoginGojekResponse()
 	{
 		$data = <<<JSON
 		{
-			"data": { "access_token": "123" }
+			"data": { "access_token": "d5579ff6-d194-473a-b3cf-0b903f5f7324" }
 		}
 JSON;
 		
 		$authToken = (new LoginGojekResponse(json_decode($data)))->getAuthToken();
-		$this->assertEquals("123", $authToken);
+		$this->assertEquals("d5579ff6-d194-473a-b3cf-0b903f5f7324", $authToken);
 	}
 	
 	public function testBalanceResponse()
@@ -92,11 +93,23 @@ JSON;
 	{
 		$data = <<<JSON
 		{
-			"data": { "qr_id": "123" }
+			"data": { "qr_id": "3b62005b-8905-406d-9830-26c06c55b3ed" }
 		}
 JSON;
 		
 		$QrId = (new WalletResponse(json_decode($data)))->getQrId();
-		$this->assertEquals("123", $QrId);
+		$this->assertEquals("3b62005b-8905-406d-9830-26c06c55b3ed", $QrId);
+	}
+	
+	public function testTransferResponse()
+	{
+		$data = <<<JSON
+		{
+			"data": { "transaction_ref": "02137d45-31e4-4d70-b0a0-40ec73f451e4" }
+		}
+JSON;
+		
+		$ref = (new TransferResponse(json_decode($data)))->getRef();
+		$this->assertEquals("02137d45-31e4-4d70-b0a0-40ec73f451e4", $ref);
 	}
 }
