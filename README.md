@@ -41,7 +41,7 @@ $gojek = new GojekID();
 ```php
 $loginToken = $gojek->loginPhone('<mobilePhone>')->getLoginToken();
 ```
-##### Login Dengan Email <span style="color:red">(In Progress)</span>
+##### Login Dengan Email
 ```php
 $loginToken = $gojek->loginEmail('<Email>')->getLoginToken();
 ```
@@ -49,20 +49,20 @@ $loginToken = $gojek->loginEmail('<Email>')->getLoginToken();
 ```php
 $authToken = $gojek->loginGojek('<loginToken>', '<OTP>')->getAuthToken();
 ```
-##### Menampilkan Informasi Akun Pengguna <span style="color:red">(In Progress)</span>
+##### Menampilkan Informasi Akun Pengguna
 ```php
 $gojek->setAuthToken('<authToken>');
 $result = $gojek->getCustomer()->getResult();
 ```
-##### Melakukan Perubahan Pada Akun <span style="color:red">(In Progress)</span>
+##### Melakukan Perubahan Pada Akun
 ```php
 $gojek->setAuthToken('<authToken>');
-$result = $gojek->editAccount('<mobilePhone>', '<email>', '<name>')->getResultV2();
+$result = $gojek->editAccount('<mobilePhone>', '<email>', '<name>')->getResult();
 ```
-##### Melakukan Verifikasi Perubahan Pada Akun <span style="color:red">(In Progress)</span>
+##### Melakukan Verifikasi Perubahan Pada Akun
 ```php
 $gojek->setAuthToken('<authToken>');
-$result = $gojek->editAccountVerify('<id>', '<mobilePhone>', '<verificationCode>')->getResultV2();
+$result = $gojek->editAccountVerify('<id>', '<mobilePhone>', '<verificationCode>')->getResult();
 ```
 ##### Menampilkan Jumlah Saldo
 ```php
