@@ -3,7 +3,7 @@ Repository Berikut Ini Merupakan Porting Dari [GOJEK](https://github.com/ridwanf
 
 <b>Fitur Akun Pengguna GOJEK</b>
 - [x] Login Dengan Nomor Handphone Untuk Mendapatkan `loginToken`
-- [ ] Login Dengan Email Untuk Mendapatkan `loginToken`
+- [x] Login Dengan Email Untuk Mendapatkan `loginToken`
 - [x] Login Dengan OTP Untuk Mendapatkan `authToken`
 - [x] Menampilkan Informasi Akun Pengguna
 - [x] Melakukan Perubahan Pada Akun

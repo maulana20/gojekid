@@ -59,6 +59,24 @@ class GojekID
 	}
 	
 	/**
+	 * loginEmail
+	 * 
+	 * @param String			$email
+	 * @return \Maulana20\Response\EmailResponse
+	 */
+	
+	public function loginEmail($email)
+	{
+		$ch = new Curl();
+		
+		$data = [
+			'email'				=> $email
+		];
+		
+		return $ch->post(GojekID::BASE_ENDPOINT . Action::loginEmail, $data, $this->headers)->getResponse();
+	}
+	
+	/**
 	 * Login GOJEK
 	 * 
 	 * @param String			$loginToken

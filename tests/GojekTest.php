@@ -7,6 +7,7 @@ use Maulana20\Meta\Meta;
 use Maulana20\Meta\Action;
 
 use Maulana20\Response\LoginPhoneResponse;
+use Maulana20\Response\LoginEmailResponse;
 use Maulana20\Response\LoginGojekResponse;
 use Maulana20\Response\BalanceResponse;
 use Maulana20\Response\WalletResponse;
@@ -48,6 +49,7 @@ class GojekTest extends TestCase
 	{
 		// Akun Pengguna GOJEK
 		$this->assertSame('https://api.gojekapi.com/v3/customers/login_with_phone', GojekID::BASE_ENDPOINT . Action::loginPhone);
+		$this->assertSame('https://api.gojekapi.com/v3/customers/login_with_email', GojekID::BASE_ENDPOINT . Action::loginEmail);
 		$this->assertNotEquals('https://api.gojekapi.com', GojekID::BASE_ENDPOINT);
 		$this->assertSame('https://api.gojekapi.com/v3/customers/token', GojekID::BASE_ENDPOINT . Action::loginGojek);
 		$this->assertSame('https://api.gojekapi.com/gojek/v2/customer', GojekID::BASE_ENDPOINT . Action::getCustomer);
@@ -68,6 +70,18 @@ class GojekTest extends TestCase
 JSON;
 		
 		$loginToken = (new LoginPhoneResponse(json_decode($data)))->getLoginToken();
+		$this->assertEquals("e16e7cf0-7621-419d-9f67-36aa8b919f34", $loginToken);
+	}
+	
+	public function testLoginEmailResponse()
+	{
+		$data = <<<JSON
+		{
+			"data": { "login_token": "e16e7cf0-7621-419d-9f67-36aa8b919f34" }
+		}
+JSON;
+		
+		$loginToken = (new LoginEmailResponse(json_decode($data)))->getLoginToken();
 		$this->assertEquals("e16e7cf0-7621-419d-9f67-36aa8b919f34", $loginToken);
 	}
 	

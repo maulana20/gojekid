@@ -4,6 +4,7 @@ namespace Maulana20\Meta;
 class Action {
 	// Akun Pengguna GOJEK
 	const loginPhone = 'v3/customers/login_with_phone';
+	const loginEmail = 'v3/customers/login_with_email';
 	const loginGojek = 'v3/customers/token';
 	const checkBalance = 'wallet/profile';
 	const getCustomer = 'gojek/v2/customer';
