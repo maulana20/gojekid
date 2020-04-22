@@ -19,7 +19,7 @@ Repository Berikut Ini Merupakan Porting Dari [GOJEK](https://github.com/ridwanf
 <b>[Fitur Data Booking GOJEK](#fitur-data-booking-gojek)</b>
 - [x] Menampilkan Booking History
 - [x] Menampilkan Booking Yang Masih Aktif
-- [ ] Mengambil Data Booking Berdasarkan `orderNo`
+- [x] Mengambil Data Booking Berdasarkan `orderNo`
 - [ ] Mengkalkulasi Pemakaian GOPAY Pada GOJEK
 
 <b>[Fitur Data GOFOOD](#fitur-data-gofood)</b>
@@ -68,9 +68,9 @@ $loginToken = $gojek->loginPhone('<mobilePhone>')->getLoginToken();
 ```php
 $loginToken = $gojek->loginEmail('<Email>')->getLoginToken();
 ```
-##### Login Pada GOJEK
+##### Login Pada GOJEK Untuk Mendapatkan Auth Token
 ```php
-$authToken = $gojek->loginGojek('<loginToken>', '<OTP>')->getAuthToken();
+$authToken = $gojek->loginAuth('<loginToken>', '<OTP>')->getAuthToken();
 ```
 ##### Menampilkan Informasi Akun Pengguna
 ```php
@@ -119,22 +119,22 @@ $ref = $gojek->gopayTransfer('<QrId>', '<PIN>', '<amount>', '<description>')->ge
 ##### Menampilkan Booking History
 ```php
 $gojek->setAuthToken('<authToken>');
-$result = $gojek->gojekHistory('<userId>')->getResult();
+$result = $gojek->bookingHistory('<userId>')->getResult();
 ```
 ##### Menampilkan Booking Yang Masih Aktif
 ```php
 $gojek->setAuthToken('<authToken>');
-$result = $gojek->gojekActive()->getResult();
+$result = $gojek->bookingActive()->getResult();
 ```
 ##### Mengambil Data Booking Berdasarkan Nomor Pesanan
 ```php
 $gojek->setAuthToken('<authToken>');
-$result = $gojek->gojekByOrder('<orderNo>')->getResult();
+$result = $gojek->bookingByOrder('<orderNo>')->getResult();
 ```
 ##### Mengkalkulasi Pemakaian GOPAY Pada GOJEK
 ```php
 $gojek->setAuthToken('<authToken>');
-$result = $gojek->gojekCalculate()->getResult();
+$result = $gojek->calculate()->getResult();
 ```
 
 #### Fitur Data GOFOOD

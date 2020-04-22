@@ -5,7 +5,7 @@ class Action {
 	// Akun Pengguna GOJEK
 	const loginPhone = 'v3/customers/login_with_phone';
 	const loginEmail = 'v3/customers/login_with_email';
-	const loginGojek = 'v3/customers/token';
+	const loginAuth = 'v3/customers/token';
 	const checkBalance = 'wallet/profile';
 	const getCustomer = 'gojek/v2/customer';
 	const editAccount = 'gojek/v2/customer/edit/v2';
@@ -18,10 +18,10 @@ class Action {
 	const gopayTransfer = 'v2/fund/transfer';
 	
 	// Data Booking GOJEK
-	const gojekHistory = 'gojek/v2/booking/history';
-	const gojekActive = 'v1/customers/active_bookings';
-	const gojekByOrder = 'gojek/v2/booking/findByOrderNo';
-	const gojekCalculate = 'gojek/v2/calculate/gopay';
+	const bookingHistory = 'gojek/v2/booking/history';
+	const bookingActive = 'v1/customers/active_bookings';
+	const bookingByOrder = 'gojek/v2/booking/findByOrderNo';
+	const calculate = 'gojek/v2/calculate/gopay';
 	
 	// Data GOFOOD
 	const gofoodHome = 'gofood/consumer/v2/home';

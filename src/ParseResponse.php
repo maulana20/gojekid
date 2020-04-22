@@ -11,7 +11,7 @@ class ParseResponse
 		// Akun Pengguna GOJEK
 		GojekID::BASE_ENDPOINT . Action::loginEmail				=> 'Maulana20\Response\LoginEmailResponse',
 		GojekID::BASE_ENDPOINT . Action::loginPhone				=> 'Maulana20\Response\LoginPhoneResponse',
-		GojekID::BASE_ENDPOINT . Action::loginGojek				=> 'Maulana20\Response\LoginGojekResponse',
+		GojekID::BASE_ENDPOINT . Action::loginAuth				=> 'Maulana20\Response\LoginAuthResponse',
 		GojekID::BASE_ENDPOINT . Action::checkBalance			=> 'Maulana20\Response\BalanceResponse',
 		GojekID::BASE_ENDPOINT . Action::getCustomer			=> 'Maulana20\Response\CustomerResponse',
 		// Akun Pengguna GOPAY

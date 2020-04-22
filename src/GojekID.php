@@ -84,7 +84,7 @@ class GojekID
 	 * @return \Maulana20\Response\LoginGojekResponse
 	 */
 	
-	public function loginGojek($loginToken, $OTP)
+	public function loginAuth($loginToken, $OTP)
 	{
 		$ch = new Curl();
 		
@@ -97,7 +97,7 @@ class GojekID
 			'client_secret'		=> '83415d06-ec4e-11e6-a41b-6c40088ab51e'
 		];
 		
-		return $ch->post(GojekID::BASE_ENDPOINT . Action::loginGojek, $data, $this->headers)->getResponse();
+		return $ch->post(GojekID::BASE_ENDPOINT . Action::loginAuth, $data, $this->headers)->getResponse();
 	}
 	
 	/**
@@ -258,7 +258,7 @@ class GojekID
 	 * @return \Maulana20\Response\DefaultResponse
 	 */
 	
-	public function gojekHistory($userId)
+	public function bookingHistory($userId)
 	{
 		$ch = new Curl();
 		
@@ -266,7 +266,7 @@ class GojekID
 		
 		$data = [];
 		
-		return $ch->get(GojekID::BASE_ENDPOINT . Action::gojekHistory . '/' . $userId, $data, $this->headers)->getResponse();
+		return $ch->get(GojekID::BASE_ENDPOINT . Action::bookingHistory . '/' . $userId, $data, $this->headers)->getResponse();
 	}
 	
 	/**
@@ -275,7 +275,7 @@ class GojekID
 	 * @return \Maulana20\Response\DefaultResponse
 	 */
 	
-	public function gojekActive()
+	public function bookingActive()
 	{
 		$ch = new Curl();
 		
@@ -283,7 +283,7 @@ class GojekID
 		
 		$data = [];
 		
-		return $ch->get(GojekID::BASE_ENDPOINT . Action::gojekActive, $data, $this->headers)->getResponse();
+		return $ch->get(GojekID::BASE_ENDPOINT . Action::bookingActive, $data, $this->headers)->getResponse();
 	}
 
 	/**
@@ -293,7 +293,7 @@ class GojekID
 	 * @return \Maulana20\Response\DefaultResponse
 	 */
 	
-	public function gojekByOrder($orderNo)
+	public function bookingByOrder($orderNo)
 	{
 		$ch = new Curl();
 		
@@ -301,7 +301,7 @@ class GojekID
 		
 		$data = [];
 		
-		return $ch->get(GojekID::BASE_ENDPOINT . Action::gojekByOrder . '/' . $orderNo, $data, $this->headers)->getResponse();
+		return $ch->get(GojekID::BASE_ENDPOINT . Action::bookingByOrder . '/' . $orderNo, $data, $this->headers)->getResponse();
 	}
 	
 	/**
@@ -310,7 +310,7 @@ class GojekID
 	 * @return \Maulana20\Response\DefaultResponse
 	 */
 	
-	public function gojekCalculate()
+	public function calculate()
 	{
 		$ch = new Curl();
 		
@@ -318,7 +318,7 @@ class GojekID
 		
 		$data = [];
 		
-		return $ch->post(GojekID::BASE_ENDPOINT . Action::gojekCalculate . '/', $data, $this->headers)->getResponse();
+		return $ch->post(GojekID::BASE_ENDPOINT . Action::calculate . '/', $data, $this->headers)->getResponse();
 	}
 	
 	/**

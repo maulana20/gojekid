@@ -8,7 +8,7 @@ use Maulana20\Meta\Action;
 
 use Maulana20\Response\LoginPhoneResponse;
 use Maulana20\Response\LoginEmailResponse;
-use Maulana20\Response\LoginGojekResponse;
+use Maulana20\Response\LoginAuthResponse;
 use Maulana20\Response\BalanceResponse;
 use Maulana20\Response\WalletResponse;
 use Maulana20\Response\TransferResponse;
@@ -51,7 +51,7 @@ class GojekTest extends TestCase
 		$this->assertSame('https://api.gojekapi.com/v3/customers/login_with_phone', GojekID::BASE_ENDPOINT . Action::loginPhone);
 		$this->assertSame('https://api.gojekapi.com/v3/customers/login_with_email', GojekID::BASE_ENDPOINT . Action::loginEmail);
 		$this->assertNotEquals('https://api.gojekapi.com', GojekID::BASE_ENDPOINT);
-		$this->assertSame('https://api.gojekapi.com/v3/customers/token', GojekID::BASE_ENDPOINT . Action::loginGojek);
+		$this->assertSame('https://api.gojekapi.com/v3/customers/token', GojekID::BASE_ENDPOINT . Action::loginAuth);
 		$this->assertSame('https://api.gojekapi.com/gojek/v2/customer', GojekID::BASE_ENDPOINT . Action::getCustomer);
 		$this->assertSame('https://api.gojekapi.com/gojek/v2/customer/edit/v2', GojekID::BASE_ENDPOINT . Action::editAccount);
 		$this->assertSame('https://api.gojekapi.com/wallet/profile', GojekID::BASE_ENDPOINT . Action::checkBalance);
@@ -85,7 +85,7 @@ JSON;
 		$this->assertEquals("e16e7cf0-7621-419d-9f67-36aa8b919f34", $loginToken);
 	}
 	
-	public function testLoginGojekResponse()
+	public function testLoginAuthResponse()
 	{
 		$data = <<<JSON
 		{
@@ -93,7 +93,7 @@ JSON;
 		}
 JSON;
 		
-		$authToken = (new LoginGojekResponse(json_decode($data)))->getAuthToken();
+		$authToken = (new LoginAuthResponse(json_decode($data)))->getAuthToken();
 		$this->assertEquals("d5579ff6-d194-473a-b3cf-0b903f5f7324", $authToken);
 	}
 	
