@@ -17,25 +17,25 @@ Repository Berikut Ini Merupakan Porting Dari [GOJEK](https://github.com/ridwanf
 - [x] Mengambil Data Wallet Code `QrId` Untuk Method Transfer
 - [x] Transfer Ke Sesama GOPAY
 
-<b>Fitur Data Booking GOJEK</b>
+<b>[Fitur Data Booking GOJEK](#fitur-data-booking-gojek)</b>
 - [ ] Menampilkan Booking History
 - [ ] Menampilkan Booking Yang Masih Aktif
 - [ ] Mengambil Data Booking Berdasarkan `orderNo`
 - [ ] Mengkalkulasi Pemakaian GOPAY Pada GOJEK
 
-<b>Fitur Data GOFOOD</b>
+<b>[Fitur Data GOFOOD](#fitur-data-gofood)</b>
 - [x] Menampilkan Data GOFOOD Bedasarkan Lokasi `latLong`
-- [x] Menampilkan Data GOFOOD Bedasarkan Lokasi `latLong` Dan `limit`
+- [x] Menampilkan Data GOFOOD Terdekat Berdasarkan Lokasi `latLong` Dan `limit`
 - [ ] Menampilkan Data Restaurant Bedasarkan `restaurantId`
 - [x] Menampilkan Data Restaurant Bedasarkan `category`
 
-<b>Fitur Data GOPOINTS</b>
+<b>[Fitur Data GOPOINTS](#fitur-data-gopoints)</b>
 - [x] Menampilkan Jumlah Point
 - [x] Menampilkan Point Lanjutan
 - [x] Menebus Point
 
-<b>Fitur Data Area GORIDE GOCAR GOSEND GOMART</b>
-- [x] Menampilkan Data Area Driver Terdekat Berdasarkan Lokasi `latLong`
+<b>[Fitur Data Area GORIDE GOCAR GOSEND GOMART](#fitur-data-area-goride-gocar-gosend-gomart)</b>
+- [x] Menampilkan Data Area Berdasarkan Lokasi `latLong`
 - [x] Menampilkan Data Area Driver Terdekat GORIDE Berdasarkan Lokasi `latLong`
 - [x] Menampilkan Data Area Driver Terdekat GOCAR Berdasarkan Lokasi `latLong`
 - [x] Menampilkan Data Area Driver Terdekat GOSEND Berdasarkan Lokasi `latLong`
@@ -119,6 +119,93 @@ $QrId = $gojek->checkWalletCode('<mobilePhoneTo>')->getQrId();
 ```php
 $gojek->setAuthToken('<authToken>');
 $ref = $gojek->gopayTransfer('<QrId>', '<PIN>', '<amount>', '<description>')->getRef();
+```
+
+#### Fitur Data Booking GOJEK
+##### Menampilkan Booking History
+```php
+$gojek->setAuthToken('<authToken>');
+$result = $gojek->gojekHistory('<userId>')->getResult();
+```
+##### Menampilkan Booking Yang Masih Aktif
+```php
+$gojek->setAuthToken('<authToken>');
+$result = $gojek->gojekActive('<userId>')->getResult();
+```
+##### Mengambil Data Booking Berdasarkan Nomor Pesanan
+```php
+$gojek->setAuthToken('<authToken>');
+$result = $gojek->gojekByOrder('<orderNo>')->getResult();
+```
+##### Mengkalkulasi Pemakaian GOPAY Pada GOJEK
+```php
+$gojek->setAuthToken('<authToken>');
+$result = $gojek->gojekCalculate()->getResult();
+```
+
+#### Fitur Data GOFOOD
+##### Menampilkan Data GOFOOD Bedasarkan Lokasi
+```php
+$gojek->setAuthToken('<authToken>');
+$result = $gojek->gofoodHome('<latLong>')->getResult();
+```
+##### Menampilkan Data GOFOOD Terdekat Berdasarkan Lokasi Dan Batas Jumlah
+```php
+$gojek->setAuthToken('<authToken>');
+$result = $gojek->gofoodNearby('<latLong>', '<page>', '<limit>')->getResult();
+```
+##### Menampilkan Data Restaurant Bedasarkan restaurantId
+```php
+$gojek->setAuthToken('<authToken>');
+$result = $gojek->gofoodRestaurantById('<restaurantId>')->getResult();
+```
+##### Menampilkan Data Restaurant Bedasarkan Category
+```php
+$gojek->setAuthToken('<authToken>');
+$result = $gojek->gofoodRestaurantByCategory('<category>', '<page>', '<limit>')->getResult();
+```
+
+#### Fitur Data GOPOINTS
+##### Menampilkan Jumlah Point
+```php
+$gojek->setAuthToken('<authToken>');
+$result = $gojek->gopointBalance()->getResult();
+```
+##### Menampilkan Point Lanjutan
+```php
+$gojek->setAuthToken('<authToken>');
+$result = $gojek->gopointNext()->getResult();
+```
+##### Menebus Point
+```php
+$gojek->setAuthToken('<authToken>');
+$result = $gojek->gopointReedem('<goPointsToken>')->getResult();
+```
+#### Fitur Data Area GORIDE GOCAR GOSEND GOMART
+##### Menampilkan Data Area Berdasarkan Lokasi
+```php
+$gojek->setAuthToken('<authToken>');
+$result = $gojek->areaLocation('<latLong>')->getResult();
+```
+##### Menampilkan Data Area Driver Terdekat GORIDE Berdasarkan Lokasi
+```php
+$gojek->setAuthToken('<authToken>');
+$result = $gojek->gorideNearby('<latLong>')->getResult();
+```
+##### Menampilkan Data Area Driver Terdekat GOCAR Berdasarkan Lokasi
+```php
+$gojek->setAuthToken('<authToken>');
+$result = $gojek->gocarNearby('<latLong>')->getResult();
+```
+##### Menampilkan Data Area Driver Terdekat GOSEND Berdasarkan Lokasi
+```php
+$gojek->setAuthToken('<authToken>');
+$result = $gojek->gosendNearby('<latLong>')->getResult();
+```
+##### Menampilkan Data Area GOMART Terdekat Berdasarkan Lokasi
+```php
+$gojek->setAuthToken('<authToken>');
+$result = $gojek->gomartNearby('<latLong>')->getResult();
 ```
 
 ### Melakukan Testing Pada PHP Unit Tests

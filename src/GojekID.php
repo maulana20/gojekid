@@ -425,7 +425,7 @@ class GojekID
 	 * @return \Maulana20\Response\DefaultResponse
 	 */
 	
-	public function driverLocation($latLong)
+	public function areaLocation($latLong)
 	{
 		$ch = new Curl();
 		
@@ -433,7 +433,7 @@ class GojekID
 		
 		$data = [];
 		
-		return $ch->get(GojekID::BASE_ENDPOINT . Action::driverLocation . '?' . http_build_query([ 'location' => $latLong ]), $data, $this->headers)->getResponse();
+		return $ch->get(GojekID::BASE_ENDPOINT . Action::areaLocation . '?' . http_build_query([ 'location' => $latLong ]), $data, $this->headers)->getResponse();
 	}
 	
 	/**

@@ -29,7 +29,7 @@ class Action {
 	const gofoodRestaurant = 'gofood/consumer/v2/restaurants';
 	
 	// Data Area GORIDE GOCAR GOFOOD GOMART
-	const driverLocation = 'gojek/poi/reverse-geocode';
+	const areaLocation = 'gojek/poi/reverse-geocode';
 	const gorideNearby = 'gojek/service_type/1/drivers/nearby';
 	const gocarNearby = 'gojek/service_type/13/drivers/nearby';
 	const gosendNearby = 'gojek/service_type/14/drivers/nearby';
