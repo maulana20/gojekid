@@ -12,6 +12,31 @@ class Action {
 	const logout = 'v3/auth/token';
 	
 	// Akun Pengguna GOPAY
-	const gopayTransfer = 'v2/fund/transfer';
 	const gopayDetail = 'wallet/profile/detailed';
+	const gopayHistory = 'wallet/history';
+	const gopayWalletCode = 'wallet/qr-code';
+	const gopayTransfer = 'v2/fund/transfer';
+	
+	// Data Booking GOJEK
+	const gojekHistory = 'gojek/v2/booking/history';
+	const gojekActive = 'v1/customers/active_bookings';
+	const gojekByOrder = 'gojek/v2/booking/findByOrderNo';
+	const gojekCalculate = 'gojek/v2/calculate/gopay';
+	
+	// Data GOFOOD
+	const gofoodHome = 'gofood/consumer/v2/home';
+	const gofoodNearby = 'gojek/merchant/find';
+	const gofoodRestaurant = 'gofood/consumer/v2/restaurants';
+	
+	// Data Area GORIDE GOCAR GOFOOD GOMART
+	const driverLocation = 'gojek/poi/reverse-geocode';
+	const gorideNearby = 'gojek/service_type/1/drivers/nearby';
+	const gocarNearby = 'gojek/service_type/13/drivers/nearby';
+	const gosendNearby = 'gojek/service_type/14/drivers/nearby';
+	const gomartNearby = 'gojek/mart-category/listMartNearest';
+	
+	// Data GOPOINTS
+	const gopointBalance = 'gopoints/v1/wallet/points-balance';
+	const gopointNext = 'gopoints/v1/next-points-token';
+	const gopointReedem = 'gopoints/v1/redeem-points-token';
 }

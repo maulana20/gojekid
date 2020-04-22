@@ -24,24 +24,22 @@ Repository Berikut Ini Merupakan Porting Dari [GOJEK](https://github.com/ridwanf
 - [ ] Mengkalkulasi Pemakaian GOPAY Pada GOJEK
 
 <b>Fitur Data GOFOOD</b>
-- [ ] Menampilkan Data GOFOOD Bedasarkan Lokasi `latLong`
-- [ ] Menampilkan Data GOFOOD Bedasarkan Lokasi `latLong` Dan `limit`
+- [x] Menampilkan Data GOFOOD Bedasarkan Lokasi `latLong`
+- [x] Menampilkan Data GOFOOD Bedasarkan Lokasi `latLong` Dan `limit`
 - [ ] Menampilkan Data Restaurant Bedasarkan `restaurantId`
-- [ ] Menampilkan Data Restaurant Bedasarkan `category`
+- [x] Menampilkan Data Restaurant Bedasarkan `category`
 
 <b>Fitur Data GOPOINTS</b>
-- [ ] Menampilkan Jumlah Point
-- [ ] Menampilkan Point Lanjutan
-- [ ] Menebus Point
+- [x] Menampilkan Jumlah Point
+- [x] Menampilkan Point Lanjutan
+- [x] Menebus Point
 
-<b>Fitur Data Area GORIDE GOCAR GOSEND</b>
-- [ ] Menampilkan Data Area Semua Driver Terdekat Berdasarkan Lokasi `latLong`
-- [ ] Menampilkan Data Area Driver Terdekat GORIDE Berdasarkan Lokasi `latLong`
-- [ ] Menampilkan Data Area Driver Terdekat GOCAR Berdasarkan Lokasi `latLong`
-- [ ] Menampilkan Data Area Driver Terdekat GOSEND Berdasarkan Lokasi `latLong`
-
-<b>Fitur Data Area GOMART</b>
-- [ ] Menampilkan Data Area Terdekat Berdasarkan Lokasi `latLong`
+<b>Fitur Data Area GORIDE GOCAR GOSEND GOMART</b>
+- [x] Menampilkan Data Area Driver Terdekat Berdasarkan Lokasi `latLong`
+- [x] Menampilkan Data Area Driver Terdekat GORIDE Berdasarkan Lokasi `latLong`
+- [x] Menampilkan Data Area Driver Terdekat GOCAR Berdasarkan Lokasi `latLong`
+- [x] Menampilkan Data Area Driver Terdekat GOSEND Berdasarkan Lokasi `latLong`
+- [ ] Menampilkan Data Area GOMART Terdekat Berdasarkan Lokasi `latLong`
 
 ### Dokumentasi
 

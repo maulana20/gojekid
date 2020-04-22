@@ -224,7 +224,7 @@ class GojekID
 		
 		$data = [];
 		
-		return $ch->get(GojekID::BASE_ENDPOINT . 'wallet/history?page=' . $page . '&limit=' . $limit, $data, $this->headers)->getResponse();
+		return $ch->get(GojekID::BASE_ENDPOINT . Action::gopayHistory . '?' . http_build_query([ 'page' => $page, 'limit' => $limit ]), $data, $this->headers)->getResponse();
 	}
 	
 	/**
@@ -242,7 +242,7 @@ class GojekID
 		
 		$data = [];
 		
-		return $ch->get(GojekID::BASE_ENDPOINT . 'wallet/qr-code?phone_number=%2B62' . ltrim($mobilePhoneTo, '0'), $data, $this->headers)->getResponse();
+		return $ch->get(GojekID::BASE_ENDPOINT . Action::gopayWalletCode . '?phone_number=%2B62' . ltrim($mobilePhoneTo, '0'), $data, $this->headers)->getResponse();
 	}
 	
 	/**
@@ -270,5 +270,292 @@ class GojekID
 		];
 		
 		return $ch->post(GojekID::BASE_ENDPOINT . Action::gopayTransfer, $data, $this->headers)->getResponse();
+	}
+	
+	/**
+	 * Get GOJEK History
+	 * 
+	 * @param String			$userId
+	 * @return \Maulana20\Response\DefaultResponse
+	 */
+	
+	public function gojekHistory($userId)
+	{
+		$ch = new Curl();
+		
+		$this->headers['Authorization'] = 'Bearer ' . $this->authToken;
+		
+		$data = [];
+		
+		return $ch->get(GojekID::BASE_ENDPOINT . Action::gojekHistory . '/' . $userId, $data, $this->headers)->getResponse();
+	}
+	
+	/**
+	 * Get GOJEK Active Booking
+	 * 
+	 * @return \Maulana20\Response\DefaultResponse
+	 */
+	
+	public function gojekActive($userId)
+	{
+		$ch = new Curl();
+		
+		$this->headers['Authorization'] = 'Bearer ' . $this->authToken;
+		
+		$data = [];
+		
+		return $ch->get(GojekID::BASE_ENDPOINT . Action::gojekActive, $data, $this->headers)->getResponse();
+	}
+
+	/**
+	 * Get GOJEK By Order No
+	 * 
+	 * @param String			$orderNo
+	 * @return \Maulana20\Response\DefaultResponse
+	 */
+	
+	public function gojekByOrder($orderNo)
+	{
+		$ch = new Curl();
+		
+		$this->headers['Authorization'] = 'Bearer ' . $this->authToken;
+		
+		$data = [];
+		
+		return $ch->get(GojekID::BASE_ENDPOINT . Action::gojekByOrder . '/' . $orderNo, $data, $this->headers)->getResponse();
+	}
+	
+	/**
+	 * Get GOJEK Calculate
+	 * 
+	 * @return \Maulana20\Response\DefaultResponse
+	 */
+	
+	public function gojekCalculate()
+	{
+		$ch = new Curl();
+		
+		$this->headers['Authorization'] = 'Bearer ' . $this->authToken;
+		
+		$data = [];
+		
+		return $ch->post(GojekID::BASE_ENDPOINT . Action::gojekCalculate . '/', $data, $this->headers)->getResponse();
+	}
+	
+	/**
+	 * Get GOFOOD Home
+	 * 
+	 * @param String			$latLong
+	 * @return \Maulana20\Response\DefaultResponse
+	 */
+	
+	public function gofoodHome($latLong)
+	{
+		$ch = new Curl();
+		
+		$this->headers['Authorization'] = 'Bearer ' . $this->authToken;
+		
+		$data = [];
+		
+		return $ch->get(GojekID::BASE_ENDPOINT . Action::gofoodHome . '?' . http_build_query([ 'location' => $latLong ]), $data, $this->headers)->getResponse();
+	}
+	
+	/**
+	 * Get GOFOOD Nearby
+	 * 
+	 * @param String			$latLong
+	 * @param String			$page
+	 * @param String			$limit
+	 * @return \Maulana20\Response\DefaultResponse
+	 */
+	
+	public function gofoodNearby($latLong, $page, $limit)
+	{
+		$ch = new Curl();
+		
+		$this->headers['Authorization'] = 'Bearer ' . $this->authToken;
+		
+		$data = [];
+		
+		return $ch->get(GojekID::BASE_ENDPOINT . Action::gofoodHome . '?' . http_build_query([ 'location' => $latLong, 'page' => $page, 'limit' => $limit ]), $data, $this->headers)->getResponse();
+	}
+	
+	/**
+	 * Get GOFOOD Restaurant By Id
+	 * 
+	 * @param String			$restaurantId
+	 * @return \Maulana20\Response\DefaultResponse
+	 */
+	
+	public function gofoodRestaurantById($restaurantId)
+	{
+		$ch = new Curl();
+		
+		$this->headers['Authorization'] = 'Bearer ' . $this->authToken;
+		
+		$data = [];
+		
+		return $ch->get(GojekID::BASE_ENDPOINT . Action::gofoodRestaurant . '/' . $restaurantId, $data, $this->headers)->getResponse();
+	}
+	
+	/**
+	 * Get GOFOOD Restaurant By Category
+	 * 
+	 * @param String			$category
+	 * @param String			$page
+	 * @param String			$limit
+	 * @return \Maulana20\Response\DefaultResponse
+	 */
+	
+	public function gofoodRestaurantByCategory($category, $page, $limit)
+	{
+		$ch = new Curl();
+		
+		$this->headers['Authorization'] = 'Bearer ' . $this->authToken;
+		
+		$data = [];
+		
+		return $ch->get(GojekID::BASE_ENDPOINT . Action::gofoodRestaurant . '?' . http_build_query([ 'category' => $category, 'page' => $page, 'limit' => $limit ]), $data, $this->headers)->getResponse();
+	}
+	
+	/**
+	 * Get Driver Location
+	 * 
+	 * @param String			$latLong
+	 * @return \Maulana20\Response\DefaultResponse
+	 */
+	
+	public function driverLocation($latLong)
+	{
+		$ch = new Curl();
+		
+		$this->headers['Authorization'] = 'Bearer ' . $this->authToken;
+		
+		$data = [];
+		
+		return $ch->get(GojekID::BASE_ENDPOINT . Action::driverLocation . '?' . http_build_query([ 'location' => $latLong ]), $data, $this->headers)->getResponse();
+	}
+	
+	/**
+	 * Get GORIDE Location
+	 * 
+	 * @param String			$latLong
+	 * @return \Maulana20\Response\DefaultResponse
+	 */
+	
+	public function gorideNearby($latLong)
+	{
+		$ch = new Curl();
+		
+		$this->headers['Authorization'] = 'Bearer ' . $this->authToken;
+		
+		$data = [];
+		
+		return $ch->get(GojekID::BASE_ENDPOINT . Action::gorideNearby . '?' . http_build_query([ 'location' => $latLong ]), $data, $this->headers)->getResponse();
+	}
+	
+	/**
+	 * Get GOCAR Location
+	 * 
+	 * @param String			$latLong
+	 * @return \Maulana20\Response\DefaultResponse
+	 */
+	
+	public function gocarNearby($latLong)
+	{
+		$ch = new Curl();
+		
+		$this->headers['Authorization'] = 'Bearer ' . $this->authToken;
+		
+		$data = [];
+		
+		return $ch->get(GojekID::BASE_ENDPOINT . Action::gocarNearby . '?' . http_build_query([ 'location' => $latLong ]), $data, $this->headers)->getResponse();
+	}
+	
+	/**
+	 * Get GOSEND Location
+	 * 
+	 * @param String			$latLong
+	 * @return \Maulana20\Response\DefaultResponse
+	 */
+	
+	public function gosendNearby($latLong)
+	{
+		$ch = new Curl();
+		
+		$this->headers['Authorization'] = 'Bearer ' . $this->authToken;
+		
+		$data = [];
+		
+		return $ch->get(GojekID::BASE_ENDPOINT . Action::gosendNearby . '?' . http_build_query([ 'location' => $latLong ]), $data, $this->headers)->getResponse();
+	}
+	
+	/**
+	 * Get GOMART Location
+	 * 
+	 * @param String			$latLong
+	 * @return \Maulana20\Response\DefaultResponse
+	 */
+	
+	public function gomartNearby($latLong)
+	{
+		$ch = new Curl();
+		
+		$this->headers['Authorization'] = 'Bearer ' . $this->authToken;
+		
+		$data = [];
+		
+		return $ch->get(GojekID::BASE_ENDPOINT . Action::gomartNearby . '?' . http_build_query([ 'location' => $latLong ]), $data, $this->headers)->getResponse();
+	}
+	
+	/**
+	 * Get GOPOINTS Balance
+	 * 
+	 * @return \Maulana20\Response\DefaultResponse
+	 */
+	
+	public function gopointBalance()
+	{
+		$ch = new Curl();
+		
+		$this->headers['Authorization'] = 'Bearer ' . $this->authToken;
+		
+		$data = [];
+		
+		return $ch->get(GojekID::BASE_ENDPOINT . Action::gopointBalance, $data, $this->headers)->getResponse();
+	}
+	
+	/**
+	 * Get GOPOINTS Next Point
+	 * 
+	 * @return \Maulana20\Response\DefaultResponse
+	 */
+	
+	public function gopointNext()
+	{
+		$ch = new Curl();
+		
+		$this->headers['Authorization'] = 'Bearer ' . $this->authToken;
+		
+		$data = [];
+		
+		return $ch->post(GojekID::BASE_ENDPOINT . Action::gopointNext, $data, $this->headers)->getResponse();
+	}
+	
+	/**
+	 * Get GOPOINTS Reedem Point
+	 * 
+	 * @return \Maulana20\Response\DefaultResponse
+	 */
+	
+	public function gopointReedem($goPointsToken)
+	{
+		$ch = new Curl();
+		
+		$this->headers['Authorization'] = 'Bearer ' . $this->authToken;
+		
+		$data = [];
+		
+		return $ch->post(GojekID::BASE_ENDPOINT . Action::gopointReedem . '?' . http_build_query([ 'points_token_id' => $goPointsToken ]), $data, $this->headers)->getResponse();
 	}
 }
