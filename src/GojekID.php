@@ -156,27 +156,6 @@ class GojekID
 	}
 	
 	/**
-	 * Verifikasi Akun Pengguna GOJEK
-	 * 
-	 * @return \Maulana20\Response\DefaultResponse
-	 */
-	
-	public function editAccountVerify($id, $mobilePhone, $verificationCode)
-	{
-		$ch = new Curl();
-		
-		$this->headers['Authorization'] = 'Bearer ' . $this->authToken;
-		
-		$data = [
-			'id'				=> $id,
-			'phone'				=> $mobilePhone,
-			'verificationCode'	=> $verificationCode,
-		];
-		
-		return $ch->post(GojekID::BASE_ENDPOINT . Action::editAccount, $data, $this->headers)->getResponse();
-	}
-	
-	/**
 	 * Logout GOJEK
 	 * 
 	 * @return \Maulana20\Response\DefaultResponse

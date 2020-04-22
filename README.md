@@ -7,7 +7,6 @@ Repository Berikut Ini Merupakan Porting Dari [GOJEK](https://github.com/ridwanf
 - [x] Login Dengan OTP Untuk Mendapatkan `authToken`
 - [x] Menampilkan Informasi Akun Pengguna
 - [x] Melakukan Perubahan Pada Akun
-- [ ] Melakukan Verifikasi Perubahan Pada Akun
 - [x] Menampilkan Jumlah Saldo
 - [x] Logout
 
@@ -82,11 +81,6 @@ $result = $gojek->getCustomer()->getResult();
 ```php
 $gojek->setAuthToken('<authToken>');
 $result = $gojek->editAccount('<mobilePhone>', '<email>', '<name>')->getResult();
-```
-##### Melakukan Verifikasi Perubahan Pada Akun
-```php
-$gojek->setAuthToken('<authToken>');
-$result = $gojek->editAccountVerify('<id>', '<mobilePhone>', '<verificationCode>')->getResult();
 ```
 ##### Menampilkan Jumlah Saldo
 ```php
