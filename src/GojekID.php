@@ -296,7 +296,7 @@ class GojekID
 	 * @return \Maulana20\Response\DefaultResponse
 	 */
 	
-	public function gojekActive($userId)
+	public function gojekActive()
 	{
 		$ch = new Curl();
 		

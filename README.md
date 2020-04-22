@@ -18,8 +18,8 @@ Repository Berikut Ini Merupakan Porting Dari [GOJEK](https://github.com/ridwanf
 - [x] Transfer Ke Sesama GOPAY
 
 <b>[Fitur Data Booking GOJEK](#fitur-data-booking-gojek)</b>
-- [ ] Menampilkan Booking History
-- [ ] Menampilkan Booking Yang Masih Aktif
+- [x] Menampilkan Booking History
+- [x] Menampilkan Booking Yang Masih Aktif
 - [ ] Mengambil Data Booking Berdasarkan `orderNo`
 - [ ] Mengkalkulasi Pemakaian GOPAY Pada GOJEK
 
@@ -130,7 +130,7 @@ $result = $gojek->gojekHistory('<userId>')->getResult();
 ##### Menampilkan Booking Yang Masih Aktif
 ```php
 $gojek->setAuthToken('<authToken>');
-$result = $gojek->gojekActive('<userId>')->getResult();
+$result = $gojek->gojekActive()->getResult();
 ```
 ##### Mengambil Data Booking Berdasarkan Nomor Pesanan
 ```php
